@@ -16,6 +16,11 @@ class RecipeViewModel : ObservableObject {
             
             self.recipes = recipes.map({ recipe in
                 recipe.id = UUID()
+                
+                for index in 0..<recipe.ingredients.count {
+                    recipe.ingredients[index].id = UUID()
+                }
+                
                 return recipe
             })
         }
